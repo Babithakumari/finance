@@ -1,0 +1,21 @@
+pre-build:
+  commands:  
+  - cmd: "apt-get"
+    args:
+      - "update"
+  - cmd: "apt-get"
+    args:
+      - "install"
+      - "zip"
+      - "-y"
+pre-exec:   
+  commands:  
+  - cmd: "curl"
+    args:
+      - "-O"
+      - "https://s3.amazonaws.com/research.metamind.io/wikitext/wikitext-103-raw-v1.zip"
+  - cmd: "ls"
+  - cmd: "unzip"
+    args:
+      - "wikitext-103-raw-v1.zip"
+  
